@@ -1,0 +1,36 @@
+{
+  "name": "js2schema",
+  "version": "0.0.0",
+  "description": "Convert JavaScript Object or Array to JSON Schema while **keeping the description and infer the type** from the pattern of the value AS BEST AS I CAN.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/legend80s/js2schema.git"
+  },
+  "keywords": [
+    "json",
+    "schema"
+  ],
+  "dependencies": {
+    "generate-schema": "^2.6.0",
+    "json-schema-traverse": "^1.0.0",
+    "lodash.get": "^4.4.2"
+  },
+  "devDependencies": {
+    "git-commit-msg-linter": "^3.1.0",
+    "jest": "^26.6.3"
+  },
+  "tnpm": {
+    "mode": "yarn",
+    "lockfile": "enable"
+  },
+  "author": "legend80s",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/legend80s/js2schema/issues"
+  },
+  "homepage": "https://github.com/legend80s/js2schema"
+}
