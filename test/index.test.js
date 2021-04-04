@@ -10,7 +10,7 @@ describe('js2schema', () => {
         }
       ]
     };
-    const actual = js2schema(input, 'configurations');
+    const actual = js2schema(input, { title: 'configurations' });
     const expected = {
       "$schema": "http://json-schema.org/draft-04/schema#",
       "title": "configurations",
@@ -43,23 +43,19 @@ describe('js2schema', () => {
     expect(actual).toEqual(expected);
   });
 
-  it('string, number, boolean and nested', () => {
+  it('Should convert number string by default', () => {
     const input = {
-      "left": {
-        "desc": "description of left part",
-        "amount": "30000.00",
-        "age": "25",
-      },
-      "middle": {
-        "title": "the title of the middle part",
-
-        nested: {
-          showBtn: true,
-        }
+      left: {
+        desc: 'description of left part',
+        number1: '30000.00',
+        number2: 30000.01,
+        integer1: '25',
+        integer2: 25,
+        integer3: 30000.00,
       },
     };
 
-    const actual = js2schema(input, 'my-card');
+    const actual = js2schema(input, { title: 'my-card' });
     const expected = {
       "$schema": "http://json-schema.org/draft-04/schema#",
       "title": "my-card",
@@ -72,17 +68,108 @@ describe('js2schema', () => {
               "type": "string",
               "description": "description of left part"
             },
-            "amount": {
+            "number1": {
               "type": "number",
               "description": "30000.00"
             },
-            "age": {
+            "number2": {
+              "type": "number",
+              "description": "30000.01"
+            },
+            "integer1": {
+              "type": "integer",
+              "description": "25"
+            },
+            "integer2": {
+              "type": "integer",
+              "description": "25"
+            },
+            "integer3": {
+              "type": "integer",
+              "description": "30000"
+            }
+          },
+          "description": "left"
+        }
+      },
+      "description": "my-card"
+    };
+
+    // console.log('actual:', JSON.stringify(actual, null, 2));
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('Should not convert number string when disabled by configuration', () => {
+    const input = {
+      left: {
+        desc: 'description of left part',
+        number1: '30000.00',
+        number2: 30000.00,
+        integer1: '25',
+        integer2: 25,
+      },
+    };
+
+    const actual = js2schema(input, { title: 'my-card', shouldConvertNumberString: false });
+    const expected = {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "title": "my-card",
+      "type": "object",
+      "properties": {
+        "left": {
+          "type": "object",
+          "properties": {
+            "desc": {
+              "type": "string",
+              "description": "description of left part"
+            },
+            "number1": {
+              "type": "string",
+              "description": "30000.00"
+            },
+            "number2": {
+              "type": "integer",
+              "description": "30000"
+            },
+            "integer1": {
+              "type": "string",
+              "description": "25"
+            },
+            "integer2": {
               "type": "integer",
               "description": "25"
             }
           },
           "description": "left"
-        },
+        }
+      },
+      "description": "my-card"
+    };
+
+    // console.log('actual:', JSON.stringify(actual, null, 2));
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('Should generate json schema against a nested one', () => {
+    const input = {
+      "middle": {
+        "title": "the title of the middle part",
+
+        nested: {
+          showBtn: true,
+        }
+      },
+    };
+
+    const actual = js2schema(input, { title: 'my-card' });
+    // console.log('actual:', actual);
+    const expected = {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "title": "my-card",
+      "type": "object",
+      "properties": {
         "middle": {
           "type": "object",
           "properties": {
