@@ -78,7 +78,7 @@ output schema：
 
 ## Why
 
-> 请问现在有工具能根据返回值自动生成sd schema 吗？
+> 请问现在有工具能根据返回值自动生成 json schema 吗？
 >
 > 输入
 >
@@ -143,7 +143,7 @@ tnpm version major / minor / patch && tnpm publish && gp && gp --tags
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://code.alipay.com/mengzou/js2schema/issues).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/legend80s/js2schema/issues).
 
 ## Show your support
 
