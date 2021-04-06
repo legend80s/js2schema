@@ -1,4 +1,4 @@
-interface IJS2schemaOptions {
+export interface IJS2schemaOptions {
   title: string;
   shouldConvertNumberString: boolean;
   typeResolvers: ITypeResolvers;
@@ -8,7 +8,7 @@ interface IJS2schemaOptions {
  * js 对象或数组转成具备更多信息的 schema
  * @returns json schema
  */
-declare const js2schema: (jsObject: IJSObject, options: IJS2schemaOptions) => ISchema;
+export const js2schema: (jsObject: IJSObject, options: IJS2schemaOptions) => ISchema;
 
 interface IModifySchemaOption {
   jsonSchema: ISchema;
@@ -17,9 +17,9 @@ interface IModifySchemaOption {
   shouldConvertNumberString: boolean;
 }
 
-type IJSObject = object | any[];
+export type IJSObject = object | any[];
 
-type ITypeResolvers = Partial<{
+export type ITypeResolvers = Partial<{
   image: IResolver;
   url: IResolver;
   floatString: IResolver;
@@ -30,12 +30,12 @@ type ITypeResolvers = Partial<{
   text: IResolver;
 }>;
 
-interface IResolver {
+export interface IResolver {
   is: (value: string) => boolean;
   type: (value: string) => string;
 }
 
-interface ISchema {
+export interface ISchema {
   [x: string]: any,
   type: 'number' | 'integer' | 'string' | 'boolean' | 'null' | 'array' | 'object';
 }
