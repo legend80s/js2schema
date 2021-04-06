@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to js2schema 👋</h1>
 <p>
-  <a href="#" target="_blank">
+  <a href="https://www.npmjs.com/package/git-commit-msg-linter" target="_blank">
     <img alt="linter by git commit msg linter" src="https://img.shields.io/badge/lint-git%20commit%20msg%20linter-blue" />
   </a>
 </p>
