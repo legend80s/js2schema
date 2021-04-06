@@ -29,7 +29,7 @@ Based on [generate-schema#json](https://www.npmjs.com/package/generate-schema#ex
 4. **Auto convert integer / float string** to `integer` / `number` type and it can be turned off as your wish.
 5. Last but not least. The powerful feature is you can **modify the type to whatever you want**, so you can build you own JavaScript type DSL. Jump to the exiciting [example](#3-js2myschema-) 😀.
 
-*Many thanks to generate-schema.*
+*Many thanks to [generate-schema](https://www.npmjs.com/package/generate-schema).*
 
 ## Usage
 
@@ -250,7 +250,7 @@ Only `integer1` is `integer` and `float1`  is `number`, the rest are resolved to
 
 ### 3. js2mySchema 🦄
 
-The powerful feature is you can modify the type to whatever you want using the `typeResolvers`, so you can build you own JavaScript type DSL ✍️.
+The powerful feature is you can modify the type to whatever you want using `typeResolvers`, so you can build you own JavaScript type DSL ✍️.
 
 ```js
 // my-json-schema.js
@@ -278,7 +278,13 @@ const typeResolvers = {
   },
   integer: {
     type: () => 'Number',
-  }
+  },
+  string: {
+    type: () => 'String',
+  },
+  text: {
+    type: (value) => value.length >= 80 ? 'Text' : 'String',
+  },
 }
 
 /**
@@ -326,11 +332,10 @@ const { js2mySchema } = require('./my-json-schema');
 const input = {
   url1: 'wechat://pay',
   url2: 'https://stackoverflow.com/',
-  i1: '1',
-  i2: 1,
+  i1: 1,
   f1: 1.1,
-  f2: '1.1',
-  s1: '1.1a',
+  s1: 'HelloWorld',
+  t1: 'HelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorld',
   image1: 'https://json-schema.org/understanding-json-schema/_static/logo.ico',
   image2: 'https://inews.gtimg.com/newsapp_ls/0/13362798150_640330/0',
 };
@@ -353,21 +358,17 @@ const expected = {
       "type": "Number",
       "description": "1"
     },
-    "i2": {
-      "type": "Number",
-      "description": "1"
-    },
     "f1": {
       "type": "Number",
       "description": "1.1"
     },
-    "f2": {
-      "type": "Number",
-      "description": "1.1"
-    },
     "s1": {
-      "type": "string",
-      "description": "1.1a"
+      "type": "String",
+      "description": "HelloWorld"
+    },
+    "t1": {
+      "type": "Text",
+      "description": "HelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorld"
     },
     "image1": {
       "type": "Image",
@@ -380,10 +381,17 @@ const expected = {
   },
   "description": ""
 };
-
 ```
 
 As we can see, we have built our own type DSL JSON schema.
+
+We create new types 🎉:
+
+- Image
+- URL
+- Number
+- String
+- Text
 
 ## Run tests
 
