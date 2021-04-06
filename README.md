@@ -383,9 +383,9 @@ const expected = {
 };
 ```
 
-As we can see, we have built our own type DSL JSON schema.
+As you can see, we have built our own type DSL JSON schema.
 
-We create new types 🎉:
+We created new types 🎉:
 
 - Image
 - URL
