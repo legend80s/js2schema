@@ -21,7 +21,13 @@ const typeResolvers = {
   },
   integer: {
     type: () => 'Number',
-  }
+  },
+  string: {
+    type: () => 'String',
+  },
+  text: {
+    type: (value) => value.length >= 80 ? 'Text' : 'String',
+  },
 }
 
 /**

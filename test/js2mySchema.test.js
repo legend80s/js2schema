@@ -10,7 +10,8 @@ describe('js2mySchema', () => {
       i2: 1,
       f1: 1.1,
       f2: '1.1',
-      s1: '1.1a',
+      s1: 'HelloWorld',
+      t1: 'HelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorld',
       image1: 'https://json-schema.org/understanding-json-schema/_static/logo.ico',
       image2: 'https://inews.gtimg.com/newsapp_ls/0/13362798150_640330/0',
     };
@@ -45,8 +46,12 @@ describe('js2mySchema', () => {
           "description": "1.1"
         },
         "s1": {
-          "type": "string",
-          "description": "1.1a"
+          "type": "String",
+          "description": "HelloWorld"
+        },
+        "t1": {
+          "type": "Text",
+          "description": "HelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorld"
         },
         "image1": {
           "type": "Image",
@@ -71,7 +76,8 @@ describe('js2mySchema', () => {
       i2: 1,
       f1: 1.1,
       f2: '1.1',
-      s1: '1.1a',
+      s1: 'HelloWorld',
+      t1: 'HelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorld',
       image1: 'https://json-schema.org/understanding-json-schema/_static/logo.ico',
       image2: 'https://inews.gtimg.com/newsapp_ls/0/13362798150_640330/0',
     };
@@ -107,7 +113,11 @@ describe('js2mySchema', () => {
         },
         "s1": {
           "type": "string",
-          "description": "1.1a"
+          "description": "HelloWorld"
+        },
+        "t1": {
+          "type": "string",
+          "description": "HelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorldHelloWorld"
         },
         "image1": {
           "type": "string",
