@@ -4,7 +4,7 @@ const { js2mySchema } = require('./my-json-schema');
 describe('js2mySchema', () => {
   it('Should modify types using my typeResolvers', () => {
     const input = {
-      url1: 'wechat://hello-world',
+      url1: 'wechat://pay',
       url2: 'https://stackoverflow.com/',
       i1: '1',
       i2: 1,
@@ -22,7 +22,7 @@ describe('js2mySchema', () => {
       "properties": {
         "url1": {
           "type": "URL",
-          "description": "wechat://hello-world"
+          "description": "wechat://pay"
         },
         "url2": {
           "type": "URL",
@@ -65,7 +65,7 @@ describe('js2mySchema', () => {
 
   it('Should modify types by default', () => {
     const input = {
-      url1: 'wechat://hello-world',
+      url1: 'wechat://pay',
       url2: 'https://stackoverflow.com/',
       i1: '1',
       i2: 1,
@@ -83,7 +83,7 @@ describe('js2mySchema', () => {
       "properties": {
         "url1": {
           "type": "string",
-          "description": "wechat://hello-world"
+          "description": "wechat://pay"
         },
         "url2": {
           "type": "string",
