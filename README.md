@@ -402,7 +402,7 @@ npm test
 ## Publish
 
 ```sh
-tnpm version major / minor / patch && tnpm publish && gp && gp --tags
+npm version major / minor / patch && npm publish && gp && gp --tags
 ```
 
 ## Author
