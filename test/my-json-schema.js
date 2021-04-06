@@ -57,7 +57,7 @@ function isWechatURL(url) {
  * Convert json or js object or array to json schema.
  * @param {object | any[]} jsObject
  * @param {string} [title] the schema title
- * @returns {string} json schema
+ * @returns {ISchema} json schema
  */
 exports.js2mySchema = (jsObject, title = '') => {
   const mySchema = js2schema(jsObject, { title, typeResolvers });
