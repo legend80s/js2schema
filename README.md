@@ -23,11 +23,11 @@ Based on [generate-schema#json](https://www.npmjs.com/package/generate-schema#ex
 
 ## Differences or Features
 
-1. Add meaningful description for every key as it can make the schema genereated form UI more readable Readability is aways important.
-2. `integer` type supported when **all** the values are integers. more at [Enhacements For JSON Schema - issue#39](https://github.com/nijikokun/generate-schema/issues/39). More precise type means more stronger system.
+1. **Add meaningful description** for every key as it can make the schema genereated form UI more readable. Readability aways counts.
+2. **`integer` type supported** when **all** the values are integers. more at [Enhacements For JSON Schema - issue#39](https://github.com/nijikokun/generate-schema/issues/39). More precise type means stronger system.
 3. Type will be resolved to `number` when **any** of the values is float.
-4. Auto convert integer / float string to `integer` / `number` type and it can be turned off as your wish.
-5. Last but not the least. The powerful feature is you can modify the type to whatever you want, so you can build you own JavaScript type DSL. Jump to the exiciting [example](#3-js2myschema-) 😀.
+4. **Auto convert integer / float string** to `integer` / `number` type and it can be turned off as your wish.
+5. Last but not least. The powerful feature is you can **modify the type to whatever you want**, so you can build you own JavaScript type DSL. Jump to the exiciting [example](#3-js2myschema-) 😀.
 
 *Many thanks to generate-schema.*
 
