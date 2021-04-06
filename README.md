@@ -9,7 +9,7 @@
 
 Based on [generate-schema#json](https://www.npmjs.com/package/generate-schema#example-1) but more powerful as js2schema will do it's best to **keep the description and infer the type** from the pattern of the **values** and is able to build your own JSON schema using `typeResolvers`.
 
-- [Differences or Features:](#differences-or-features)
+- [Differences or Features](#differences-or-features)
 - [Usage](#usage)
 - [Example](#example)
   - [1. Added Description and smart integer type. 😘](#1-added-description-and-smart-integer-type-)
@@ -21,7 +21,7 @@ Based on [generate-schema#json](https://www.npmjs.com/package/generate-schema#ex
 - [🤝 Contributing](#-contributing)
 - [Show your support](#show-your-support)
 
-## Differences or Features:
+## Differences or Features
 
 1. Add meaningful description for every key as it can make the schema genereated form UI more readable Readability is aways important.
 2. `integer` type supported when **all** the values are integers. more at [Enhacements For JSON Schema - issue#39](https://github.com/nijikokun/generate-schema/issues/39). More precise type means more stronger system.
