@@ -521,4 +521,56 @@ describe('js2schema', () => {
 
     expect(actual).toEqual(expected);
   });
+
+  it('Should work when "/" in key', () => {
+    const input = {
+      site: [
+        {
+          name: 'alipay',
+          'name/1': 'https://img.alicdn.com/tfs/TB1qEwuzrj1gK0jSZFOXXc7GpXa-32-32.ico',
+          'name//1': 'https://img.alicdn.com/tfs/TB1qEwuzrj1gK0jSZFOXXc7GpXa-32-32.ico',
+          'name~1': 'https://img.alicdn.com/tfs/TB1qEwuzrj1gK0jSZFOXXc7GpXa-32-32.ico',
+        }
+      ]
+    };
+    const actual = js2schema(input, { title: '对象' });
+
+    // console.log('actual:', JSON.stringify(actual, null, 2));
+    const expected = {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "title": "对象",
+      "type": "object",
+      "properties": {
+        "site": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "alipay"
+              },
+              "name/1": {
+                "type": "string",
+                "description": "name~11"
+              },
+              "name//1": {
+                "type": "string",
+                "description": "name~1~11"
+              },
+              "name~1": {
+                "type": "string",
+                "description": "name~01"
+              }
+            },
+            "description": "items"
+          },
+          "description": "site"
+        }
+      },
+      "description": "对象"
+    };
+
+    expect(actual).toEqual(expected);
+  });
 });
