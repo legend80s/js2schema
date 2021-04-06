@@ -1,6 +1,6 @@
 {
   "name": "js2schema",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Convert JavaScript Object or Array to JSON Schema while **keeping the description and infer the type** from the pattern of the value AS BEST AS I CAN.",
   "main": "index.js",
   "scripts": {
