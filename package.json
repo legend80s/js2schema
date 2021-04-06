@@ -12,7 +12,16 @@
   },
   "keywords": [
     "json",
-    "schema"
+    "schema",
+    "object",
+    "convert",
+    "manipulate",
+    "traverse",
+    "types",
+    "type",
+    "is",
+    "generate",
+    "produce"
   ],
   "dependencies": {
     "generate-schema": "^2.6.0",
