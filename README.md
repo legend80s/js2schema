@@ -7,7 +7,19 @@
 
 > Convert JavaScript Object or Array to JSON Schema while **keeping the description and inferring the type** from the pattern of the value AS BEST AS I CAN.
 
-Based on [generate-schema#json](https://www.npmjs.com/package/generate-schema#example-1) but more powerful as js2schema will do it's best to **keep the description and infer the type** from the pattern of the value**s**.
+Based on [generate-schema#json](https://www.npmjs.com/package/generate-schema#example-1) but more powerful as js2schema will do it's best to **keep the description and infer the type** from the pattern of the **values** and is able to build your own JSON schema using `typeResolvers`.
+
+- [Differences or Features:](#differences-or-features)
+- [Usage](#usage)
+- [Example](#example)
+  - [1. Added Description and smart integer type. 😘](#1-added-description-and-smart-integer-type-)
+  - [2. Auto convert integer / float string to `integer` / `number` type 🍿](#2-auto-convert-integer--float-string-to-integer--number-type-)
+  - [3. js2mySchema 🦄](#3-js2myschema-)
+- [Run tests](#run-tests)
+- [Publish](#publish)
+- [Author](#author)
+- [🤝 Contributing](#-contributing)
+- [Show your support](#show-your-support)
 
 ## Differences or Features:
 
@@ -15,7 +27,7 @@ Based on [generate-schema#json](https://www.npmjs.com/package/generate-schema#ex
 2. `integer` type supported when **all** the values are integers. more at [Enhacements For JSON Schema - issue#39](https://github.com/nijikokun/generate-schema/issues/39). More precise type means more stronger system.
 3. Type will be resolved to `number` when **any** of the values is float.
 4. Auto convert integer / float string to `integer` / `number` type and it can be turned off as your wish.
-5. Last but not the least. The powerful feature is you can modify the type to whatever you want, so you can build you own JavaScript type DSL. Jump to the exiciting example 😀.
+5. Last but not the least. The powerful feature is you can modify the type to whatever you want, so you can build you own JavaScript type DSL. Jump to the exiciting [example](#3-js2myschema-) 😀.
 
 *Many thanks to generate-schema.*
 
