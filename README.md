@@ -15,7 +15,7 @@
 
 Based on [generate-schema#json](https://www.npmjs.com/package/generate-schema#example-1) but more powerful as js2schema will do it's best to **keep the description and infer the type** from the pattern of the **values** and is able to build your own JSON schema using `typeResolvers`.
 
-> 💡 Notice: Try [generate-schema#json](https://www.npmjs.com/package/generate-schema#example-1) first and use this package only if generate-schema doesn't meet your requirements.
+> 💡 Notice: Try [generate-schema#json](https://www.npmjs.com/package/generate-schema#example-1) first then use this package only if generate-schema doesn't meet your requirements.
 
 - [Differences or Features](#differences-or-features)
 - [Usage](#usage)
