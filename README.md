@@ -52,38 +52,40 @@ const { js2schema } = require('js2schema')
 Take the example from [GenerateSchema#json](https://www.npmjs.com/package/generate-schema#example-1):
 
 ```js
-// Capture Schema Output
-var schema = js2schema([
+const schema = js2schema(
+  [
     {
-        "id": 2,
-        "name": "An ice sculpture",
-        "price": 12.50,
-        "tags": ["cold", "ice"],
-        "dimensions": {
-            "length": 7.0,
-            "width": 12.0,
-            "height": 9.5
-        },
-        "warehouseLocation": {
-            "latitude": -78.75,
-            "longitude": 20.4
-        }
+      id: 2,
+      name: 'An ice sculpture',
+      price: 12.5,
+      tags: ['cold', 'ice'],
+      dimensions: {
+        length: 7.0,
+        width: 12.0,
+        height: 9.5,
+      },
+      warehouseLocation: {
+        latitude: -78.75,
+        longitude: 20.4,
+      },
     },
     {
-        "id": 3,
-        "name": "A blue mouse",
-        "price": 25.50,
-        "dimensions": {
-            "length": 3.1,
-            "width": 1.0,
-            "height": 1.0
-        },
-        "warehouseLocation": {
-            "latitude": 54.4,
-            "longitude": -32.7
-        }
-    }
-], { title: 'Product' })
+      id: 3,
+      name: 'A blue mouse',
+      price: 25.5,
+      dimensions: {
+        length: 3.1,
+        width: 1.0,
+        height: 1.0,
+      },
+      warehouseLocation: {
+        latitude: 54.4,
+        longitude: -32.7,
+      },
+    },
+  ],
+  { title: 'Product' },
+);
 ```
 
 Outputs:
@@ -263,7 +265,7 @@ The powerful feature is you can modify the type to whatever you want using `type
 ```js
 // my-json-schema.js
 
-const { js2schema, defaultResolvers } = require('..');
+const { js2schema, defaultResolvers } = require('js2schema');
 
 /** @type {ITypeResolvers}  */
 const typeResolvers = {
