@@ -13,7 +13,7 @@
 
 > Convert JavaScript Object or Array to JSON Schema while **keeping the description and inferring the type** from the pattern of the value AS BEST AS I CAN.
 
-Based on [generate-schema#json](https://www.npmjs.com/package/generate-schema#example-1) but more powerful as js2schema will do it's best to **keep the description and infer the type** from the pattern of the **values** and is able to build your own JSON schema using `typeResolvers`.
+Based on [generate-schema#json](https://www.npmjs.com/package/generate-schema#example-1) but more powerful as js2schema will do it's best to **keep the description and infer the type** from the pattern of the **values** and is able to build your own JSON schema using [`typeResolvers`](#3-js2myschema-).
 
 > 💡 Notice: Try [generate-schema#json](https://www.npmjs.com/package/generate-schema#example-1) first then use this package only if generate-schema doesn't meet your requirements.
 
