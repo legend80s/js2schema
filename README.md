@@ -20,9 +20,9 @@ Based on [generate-schema#json](https://www.npmjs.com/package/generate-schema#ex
 - [Differences or Features](#differences-or-features)
 - [Usage](#usage)
 - [Example](#example)
-  - [1. Added Description and smart integer type. 😘](#1-added-description-and-smart-integer-type-)
-  - [2. Auto convert integer / float string to `integer` / `number` type 🍿](#2-auto-convert-integer--float-string-to-integer--number-type-)
-  - [3. js2mySchema 🦄](#3-js2myschema-)
+  - [Added Description and smart integer type. 😘](#added-description-and-smart-integer-type-)
+  - [Auto convert integer / float string to `integer` / `number` type 🍿](#auto-convert-integer--float-string-to-integer--number-type-)
+  - [js2mySchema 🦄](#js2myschema-)
 - [Run tests](#run-tests)
 - [Publish](#publish)
 - [Author](#author)
@@ -47,7 +47,7 @@ const { js2schema } = require('js2schema')
 
 ## Example
 
-### 1. Added Description and smart integer type. 😘
+### Added Description and smart integer type. 😘
 
 Take the example from [GenerateSchema#json](https://www.npmjs.com/package/generate-schema#example-1):
 
@@ -170,7 +170,7 @@ There are two differences:
 1. Descriptions are added for every key and we try to make it meaningful as possible.
 2. `id` is always an `integer` and it's type is resolved to `integer` as we expected. Hooray 🎉.
 
-### 2. Auto convert integer / float string to `integer` / `number` type 🍿
+### Auto convert integer / float string to `integer` / `number` type 🍿
 
 ```javascript
 const obj = {
@@ -258,7 +258,7 @@ output schema:
 
 Only `integer1` is `integer` and `float1`  is `number`, the rest are resolved to `string` as it is.
 
-### 3. js2mySchema 🦄
+### js2mySchema 🦄
 
 The powerful feature is you can modify the type to whatever you want using `typeResolvers`, so you can build you own JavaScript type DSL ✍️.
 
